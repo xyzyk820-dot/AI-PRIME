@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Prime AI...</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="loading-page">
+    <div class="blur-bg"></div>
+    
+    <div class="video-container">
+        <video autoplay muted playsinline id="loading-vid">
+            <source src="loading.mp4" type="video/mp4">
+            mohon tunggu sebentar 
+        </video>
+    </div>
+
+    <script>
+        // Set ke 11500 milidetik (11.5 detik)
+        // Biar pas video 11 detik selesai, ada jeda dikit baru pindah ke dashboard
+        setTimeout(() => {
+            window.location.href = "dashboard.html";
+        }, 11500); 
+
+        // Opsional: Kalau mau pindah otomatis tepat saat video selesai (lebih akurat)
+        const vid = document.getElementById('loading-vid');
+        vid.onended = function() {
+            window.location.href = "dashboard.html";
+        };
+    </script>
+</body>
+</html>
